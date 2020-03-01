@@ -189,6 +189,12 @@ static void IRAM_ATTR disp_spi_transfer_addrwin(uint16_t x1, uint16_t x2, uint16
 
 	tft_disp_spi->host->hw->cmd.usr = 1; // Start transfer
 
+	x1 += 26;
+	x2 += 26;
+
+	y1 += 1;
+	y2 += 1;
+
 	wd = (uint32_t)(x1>>8);
 	wd |= (uint32_t)(x1&0xff) << 8;
 	wd |= (uint32_t)(x2>>8) << 16;
