@@ -2743,7 +2743,7 @@ exit:
 	if (line_buf[0]) free(line_buf[0]);
 	if (line_buf[1]) free(line_buf[1]);
 	if (fhndl) fclose(fhndl);
-	if ((err) && (tft_image_debug)) printf("Error: %d [%s]\r\n", err, err_buf);
+	if (err) printf("Error: %d [%s]\r\n", err, err_buf);
 
 	return err;
 }
